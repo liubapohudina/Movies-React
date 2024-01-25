@@ -1,0 +1,20 @@
+
+.nav {
+    display: flex;
+    padding: 20px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 270px;
+    text-decoration: none;
+    list-style: none;
+    background-color: rgb(74, 147, 203);
+    border-bottom: 2px solid  rgb(21, 21, 68);
+}
+.link {
+    color: rgb(21, 21, 68);
+    text-decoration: none;
+    font-size: 24px;
+}
+.link:global(.active) {
+    color: rgb(185, 185, 5);
+}

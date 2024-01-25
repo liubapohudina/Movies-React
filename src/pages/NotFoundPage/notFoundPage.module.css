@@ -1,0 +1,10 @@
+.link {
+    text-decoration: none;
+    color: rgb(61, 61, 144);
+    font-size: 22px;
+}
+.box {
+    color: rgb(21, 21, 68);
+    padding-top: 50px;
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+.boxMovie {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    gap: 40px;
+}
+.boxMovie h2 {
+    font-size: 36px;
+    text-transform: uppercase;
+}
+.boxInfo {
+    margin-top: 15px;
+    border-top: 3px solid rgb(21, 21, 68);
+    border-bottom: 3px solid rgb(21, 21, 68);
+    padding: 20px 0;
+}
