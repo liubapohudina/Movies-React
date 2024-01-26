@@ -17,4 +17,12 @@ code {
 ul {
   list-style: none;
 }
+button {
+  cursor: pointer;
+}
+button:hover,
+button:focus {
+  background-color: rgb(19, 19, 67);
+  color: white;
+}
 

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getMovieDetails } from "services/api";
 import { Link, Outlet } from "react-router-dom";
@@ -12,6 +12,7 @@ const MovieDetails = () => {
     const [movieInfo, setMovieInfo] = useState('');
 
     const { movie_id } = useParams();
+    const navigate = useNavigate();
 
     
 
@@ -32,6 +33,8 @@ const MovieDetails = () => {
         }
         fetchMovDetails()
     }, [movie_id])
+    
+    const goBack = () => { navigate(-1) };
 
     const score = (movieInfo.vote_average * 10).toFixed(1);
     const PATH_IMAGE = 'https://image.tmdb.org/t/p/w500';
@@ -41,7 +44,7 @@ const MovieDetails = () => {
             {loading && <Loader/>}
             {movieInfo && (
                 <>
-            <Link to='/'>Go to back</Link>
+            <button type="button" onClick={goBack}>Go to back</button>
                 <div className={styles.boxMovie}>
                         <img src={PATH_IMAGE + movieInfo.backdrop_path} alt={movieInfo.original_title} />
                 <div>        
