@@ -5,7 +5,7 @@ const CastItem = ({ datacast }) => {
     const element = datacast.map(({ id, original_name, character, profile_path }) => (
         <li id={id} key={id}>
             <img src={PATH_IMAGE + profile_path} alt={character} width='300' height='450' loading="lazy"/>
-            <h3>{original_name}</h3>
+            <h2>{original_name}</h2>
             <h3>{character}</h3>
         </li>
     ))
