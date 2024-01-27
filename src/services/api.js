@@ -5,7 +5,7 @@ const API_KEY = 'ec2e434cc9bc9d3a38f01279780f56eb';
 
 const ENDPOINTS = {
     POPULAR: '/trending/movie/day',
-    SEARCHWORD: '/search/search-movies',
+    SEARCHWORD: '/search/movie',
     MOVIE: '/movie',
     CAST: '/credits',
     REVIEWS: '/reviews',
@@ -29,5 +29,10 @@ export const getMovieCasts = async id => {
 export const getMovieReviews = async id => {
     return axios.get(`${ENDPOINTS.MOVIE}/${id}${ENDPOINTS.REVIEWS}?api_key=${API_KEY}`)
      .then(response => response.data)
+}
+
+export const getMovieSearch = async (query, page) => {
+    return axios.get(`${ENDPOINTS.SEARCHWORD}?api_key=${API_KEY}&query=${query}&page=${page}`)
+    .then(response => response.data)
 }
 
