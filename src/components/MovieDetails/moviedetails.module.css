@@ -14,3 +14,9 @@
     border-bottom: 3px solid rgb(21, 21, 68);
     padding: 20px 0;
 }
+.linkList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 24px;
+}

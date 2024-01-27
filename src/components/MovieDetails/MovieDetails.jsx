@@ -60,7 +60,7 @@ const MovieDetails = () => {
                 </div>
                 <div className={styles.boxInfo}>
                     <h3>Addition information</h3>
-                    <ul>
+                    <ul className={styles.linkList}>
                             <li>
                                 <Link to='credits'>Casts</Link>
                             </li>
