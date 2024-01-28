@@ -64,10 +64,10 @@ const MovieDetails = () => {
                     <h3>Addition information</h3>
                     <ul className={styles.linkList}>
                             <li>
-                                <Link to='credits' state={{from: '/'}}>Casts</Link>
+                                <Link to='credits' state={{from: backLink}}>Casts</Link>
                             </li>
                             <li>
-                                <Link to='reviews' state={{from: '/'}}>Reviews</Link>
+                                <Link to='reviews' state={{from: backLink}}>Reviews</Link>
                             </li>
                         </ul>
                     <Outlet/>    
