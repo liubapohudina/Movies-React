@@ -5,7 +5,7 @@ const CastItem = ({ datacast }) => {
     const element = datacast.map(({ id, original_name, character, profile_path }) => (
         <li className={styles.itemList} id={id} key={id}>
               {profile_path ? (
-                <img src={PATH_IMAGE + profile_path} alt={character} width='300' height='450' loading="lazy"/>
+                <img src={PATH_IMAGE + profile_path} alt={character} height='450' loading="lazy"/>
             ) : (
                 <div className={styles.error}>Sorry, the path to image is broken or ampty</div>
             )}
