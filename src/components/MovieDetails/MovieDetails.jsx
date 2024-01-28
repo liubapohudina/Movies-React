@@ -46,7 +46,7 @@ const MovieDetails = () => {
                 <>
             <button type="button" onClick={goBack}>Go to back</button>
                 <div className={styles.boxMovie}>
-                        <img src={PATH_IMAGE + movieInfo.backdrop_path} alt={movieInfo.original_title} />
+                        {movieInfo.backdrop_path ? (<img src={PATH_IMAGE + movieInfo.backdrop_path} alt={movieInfo.original_title} />) : <div className={styles.error}>Sorry, the path to image is broken or ampty</div>}
                 <div>        
                 <h2>{movieInfo.original_title}</h2>
                 <h3>User score: {score}</h3>

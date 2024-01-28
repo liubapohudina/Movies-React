@@ -29,7 +29,6 @@ const Movies = () => {
         setLoading(true);
         const fetchSearchMovie = async() => {
             try {
-                console.log(page)
                 const resp = await getMovieSearch(search, page);
                 setMovies(resp.results);
                 setTotalresults(resp.total_results);
