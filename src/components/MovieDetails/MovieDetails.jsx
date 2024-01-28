@@ -37,7 +37,6 @@ const MovieDetails = () => {
     }, [movie_id])
     
     // const goBack = () => { navigate(backLink) };
-
     const score = (movieInfo.vote_average * 10).toFixed(1);
     const PATH_IMAGE = 'https://image.tmdb.org/t/p/w500';
 

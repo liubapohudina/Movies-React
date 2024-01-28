@@ -6,7 +6,6 @@ import styles from '../MovieList/movieList.module.css';
 const MoviesList = ({movies, page}) => {
     const location = useLocation();
 
-
     const elements = movies.map(({ id, title }) => (<li id={id} key={id}>
         <Link className={styles.link} to={`/movies/${id}`} state={{from: location}}>{title}</Link>
     </li>))
