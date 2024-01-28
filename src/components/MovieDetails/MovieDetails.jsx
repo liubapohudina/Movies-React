@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getMovieDetails } from "services/api";
 import { Link, Outlet } from "react-router-dom";
@@ -13,6 +13,8 @@ const MovieDetails = () => {
 
     const { movie_id } = useParams();
     const navigate = useNavigate();
+    const location = useLocation()
+    const backLink = location.state?.from ?? '/';
 
     
 
@@ -34,7 +36,7 @@ const MovieDetails = () => {
         fetchMovDetails()
     }, [movie_id])
     
-    const goBack = () => { navigate(-1) };
+    const goBack = () => { navigate(backLink) };
 
     const score = (movieInfo.vote_average * 10).toFixed(1);
     const PATH_IMAGE = 'https://image.tmdb.org/t/p/w500';
@@ -62,10 +64,10 @@ const MovieDetails = () => {
                     <h3>Addition information</h3>
                     <ul className={styles.linkList}>
                             <li>
-                                <Link to='credits'>Casts</Link>
+                                <Link to='credits' state={{from: '/'}}>Casts</Link>
                             </li>
                             <li>
-                                <Link to='reviews'>Reviews</Link>
+                                <Link to='reviews' state={{from: '/'}}>Reviews</Link>
                             </li>
                         </ul>
                     <Outlet/>    
