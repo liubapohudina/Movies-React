@@ -40,7 +40,7 @@ const MovieDetails = () => {
     const PATH_IMAGE = 'https://image.tmdb.org/t/p/w500';
 
     return (
-        <section>
+        <main>
             {loading && <Loader/>}
             {movieInfo && (
                 <>
@@ -71,7 +71,7 @@ const MovieDetails = () => {
                     <Outlet/>    
                 </div>    
             </>)}
-            </section>
+            </main>
 )
 }
 

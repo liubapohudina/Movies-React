@@ -62,13 +62,13 @@ const Movies = () => {
     const btnLoadMore = () => setSearchParams({query: search, page: Number(page) + 1});
 
     return (
-        <div className={styles.box}>
+        <main className={styles.box}>
             <h1 className="hidden">Search</h1>
             <Searchbar handleClickSubmit={handleClickSubmit} />
             {loading && <Loader/>}
             {Boolean(movies.length) && <MoviesList movies={movies} />}
             {showBtnLoadMore && <button className={styles.btn} onClick={btnLoadMore} type="button">Next page</button>}
-        </div>
+        </main>
     )
 
 }
