@@ -1,4 +1,4 @@
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getMovieDetails } from "services/api";
 import { Link, Outlet } from "react-router-dom";
@@ -12,7 +12,7 @@ const MovieDetails = () => {
     const [movieInfo, setMovieInfo] = useState('');
 
     const { movie_id } = useParams();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const location = useLocation()
     const backLink = location.state?.from ?? '/';
 
@@ -36,7 +36,7 @@ const MovieDetails = () => {
         fetchMovDetails()
     }, [movie_id])
     
-    const goBack = () => { navigate(backLink) };
+    // const goBack = () => { navigate(backLink) };
 
     const score = (movieInfo.vote_average * 10).toFixed(1);
     const PATH_IMAGE = 'https://image.tmdb.org/t/p/w500';
@@ -46,7 +46,7 @@ const MovieDetails = () => {
             {loading && <Loader/>}
             {movieInfo && (
                 <>
-            <button type="button" onClick={goBack}>Go to back</button>
+            <Link to={backLink}>Go to back</Link>
                 <div className={styles.boxMovie}>
                         {movieInfo.backdrop_path ? (<img src={PATH_IMAGE + movieInfo.backdrop_path} alt={movieInfo.original_title} />) : <div className={styles.error}>Sorry, the path to image is broken or ampty</div>}
                 <div>        
